@@ -1859,15 +1859,23 @@ void debugFindMin()
     }
 
     vector<myType> max(rows), maxIndex(rows);
-    funcMinMPC(a, max, maxIndex, rows, columns);
+	auto start = system_clock::now();
+	for (size_t i = 0; i < 1000; i++)
+	{
+		funcMinMPC(a, max, maxIndex, rows, columns);
+	}
+	auto end   = system_clock::now();
+	auto duration = duration_cast<microseconds>(end - start);
+	cout <<  "time cost：" 
+     << double(duration.count()) * microseconds::period::num / microseconds::period::den << endl;
 
-    if (PRIMARY)
-    {
-        funcReconstruct2PC(a, columns, "a");
-        funcReconstruct2PC(max, rows, "min");
-        funcReconstruct2PC(maxIndex, rows, "minIndex");
-        cout << "-----------------" << endl;
-    }
+    // if (PRIMARY)
+    // {
+    //     funcReconstruct2PC(a, columns, "a");
+    //     funcReconstruct2PC(max, rows, "min");
+    //     funcReconstruct2PC(maxIndex, rows, "minIndex");
+    //     cout << "-----------------" << endl;
+    // }
 }
 void debugEuclideanDistance(){
     size_t size = 4;

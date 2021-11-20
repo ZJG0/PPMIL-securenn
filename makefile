@@ -89,6 +89,14 @@ abcTerminal: BMRPassive.out
 	./BMRPassive.out 3PC 0 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 
 	@echo "Execution completed"
 
+zero: BMRPassive.out
+	./BMRPassive.out 3PC 0 files/parties_WAN_3PC files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 
+one: BMRPassive.out
+	./BMRPassive.out 3PC 1 files/parties_WAN_3PC files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD
+two: BMRPassive.out
+	./BMRPassive.out 3PC 2 files/parties_WAN_3PC files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC
+
+
 defTerminal: BMRPassive.out
 	./BMRPassive.out 4PC 3 files/parties_localhost files/keyD files/keyCD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD >/dev/null &
 	./BMRPassive.out 4PC 2 files/parties_localhost files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC >/dev/null &
