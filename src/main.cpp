@@ -91,6 +91,7 @@ int main(int argc, char** argv)
 	aes_b_2 = new AESObject("files/keyD");
 	aes_c_1 = new AESObject("files/keyD");
 	aes_parallel = new ParallelAESObject(argv[5]);
+	initializeMPC();
 
 	if (!STANDALONE)
 	{
@@ -106,7 +107,10 @@ int main(int argc, char** argv)
 	start_m();
 
 	whichNetwork = "Debug ReLU";
-	debugReLU();
+	// debugReLU();
+	// debugFindMin();
+	// debugEuclideanDistance();
+	debugDTW();
 	// debugReLUPrime();
 	// debugSS();
 	// debugDotProd();

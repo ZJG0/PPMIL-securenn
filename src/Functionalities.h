@@ -42,6 +42,17 @@ void funcMaxMPC(vector<myType> &a, vector<myType> &max, vector<myType> &maxIndex
 void funcMaxIndexMPC(vector<myType> &a, const vector<myType> &maxIndex, 
 						size_t rows, size_t columns);
 void aggregateCommunication();
+void funcDtwReshape(vector <myType> &x2, vector <myType> &x, vector <myType> &y2, vector <myType> &y,
+                   vector <myType> &resX2, vector <myType> &resX, vector <myType> &resY2, vector <myType> &resY,
+                   size_t rows,size_t columns);
+void funcDTWImprove(vector<myType> &x2,vector<myType> &x,
+             vector<myType> &y2,vector<myType> &y,
+             vector<myType> &dis,size_t rows,size_t columns,size_t cr);
+void funcEuclideanDistance(vector <myType> &x2, vector <myType> &x, vector <myType> &y2, vector <myType> &y,
+        vector <myType> &dis, myType size);
+void funcMinMPC(vector<myType> &a, vector<myType> &max, vector<myType> &maxIndex,
+                size_t rows, size_t columns);
+void funcNewRELUPrime3PC(const vector<myType> &a, vector<myType> &b, size_t size);
 
 
 //Debug
@@ -56,6 +67,10 @@ void debugMatMul();
 void debugReLU();
 void debugReLUPrime();
 void debugMaxIndex();
+void debugFindMin();
+void debugEuclideanDistance();
+void debugDTW();
+
 
 //Test
 void testMatMul(size_t rows, size_t common_dim, size_t columns, size_t iter);
